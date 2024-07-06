@@ -5,10 +5,44 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <!-- Container for location, rounded corners -->
     <TextView
-        android:id="@+id/cellInfoTextView"
-        android:layout_width="wrap_content"
+        android:id="@+id/locationTextView"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:text="Cell Info will be displayed here"
-        android:layout_centerInParent="true"/>
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="170dp"
+        android:layout_marginStart="16dp"
+        android:elevation="8dp"
+        android:padding="16dp"
+        android:text="Your Location"
+        android:background="@drawable/rounded_background"/>
+
+    <!-- Container for cell info, rounded corners -->
+    <ScrollView
+        android:id="@+id/parametersScrollView"
+        android:layout_width="280dp"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"
+        android:elevation="8dp"
+        android:padding="16dp"
+        android:scrollbars="vertical"
+        android:background="@drawable/rounded_background">
+
+        <TextView
+            android:id="@+id/cellInfoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cell Info will be displayed here"/>
+
+    </ScrollView>
+
 </RelativeLayout>

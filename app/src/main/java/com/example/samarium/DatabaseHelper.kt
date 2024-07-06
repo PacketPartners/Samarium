@@ -8,7 +8,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
 
     companion object {
         const val DATABASE_NAME = "cellinfo.db"
-        const val DATABASE_VERSION = 1
+        const val DATABASE_VERSION = 2  // Increase version due to schema change
         const val TABLE_NAME = "cellinfo"
         const val COLUMN_ID = "id"
         const val COLUMN_EVENT_TIME = "event_time"
@@ -18,6 +18,8 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         const val COLUMN_RSRP = "rsrp"
         const val COLUMN_RSRQ = "rsrq"
         const val COLUMN_TECHNOLOGY = "technology"
+        const val COLUMN_LATITUDE = "latitude"  // New column for latitude
+        const val COLUMN_LONGITUDE = "longitude" // New column for longitude
     }
 
     override fun onCreate(db: SQLiteDatabase) {
@@ -29,7 +31,9 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
                 "$COLUMN_CELL_ID INTEGER, " +
                 "$COLUMN_RSRP TEXT, " +
                 "$COLUMN_RSRQ TEXT, " +
-                "$COLUMN_TECHNOLOGY TEXT)"
+                "$COLUMN_TECHNOLOGY TEXT, " +
+                "$COLUMN_LATITUDE REAL, " +        // Define latitude column
+                "$COLUMN_LONGITUDE REAL)"         // Define longitude column
         db.execSQL(createTable)
     }
 

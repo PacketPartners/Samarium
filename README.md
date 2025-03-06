@@ -20,7 +20,7 @@ The app integrates **Google Maps** to visually represent the user's location and
 
 
 ## Usage
-- Open the app to see your location on the map.
+- Open the app (PacketPartners.apk) to see your location on the map.
 - Grant necessary permissions when prompted.
 - Observe network details like cellular technology and signal strength.
 - Move around to see real-time location and network updates.
